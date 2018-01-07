@@ -18,6 +18,8 @@ public class Server {
 
             while (true) {
                 Socket clientSocket = listeningSocket.accept();
+                String ip = clientSocket.getInetAddress().getHostAddress();
+                    System.out.println(ip + "......connected");
                 startClientThread(clientSocket);
             }
         } catch (IOException e) {
